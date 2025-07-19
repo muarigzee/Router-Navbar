@@ -1,0 +1,150 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fefefe; /* Fallback background */
+  color: #1e293b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.background-wrapper {
+  background-image: url('/bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  min-height: 100vh; 
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 49, 0.966); 
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 2rem;
+}
+
+/* Navbar title */
+nav .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Navbar Links */
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Active and Hover state for links */
+nav ul li a:not(.active):hover {
+  background-color: #172554;
+}
+
+/* Mobile menu button */
+.menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.menu span {
+  height: 0.25rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .menu {
+    display: flex;
+  }
+}
+
+/* Page Content */
+.page-content {
+  padding: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 0.5rem;
+}
+
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  /* background-color: rgba(0, 0, 0, 0.5);  */
+  border-radius: 0.5rem;
+  text-align: center;
+}
